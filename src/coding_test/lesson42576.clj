@@ -23,20 +23,3 @@
     first)
 
 
-
-
-(defn fun [participant completion]
-  (-> (reduce (fn [acc x]
-               ((fn [name part]
-                  (let [length (count part)
-                        index (.indexOf part name)]
-                    (vec
-                      (case index
-                        0 (rest part)
-                        (dec length) (pop part)
-                        (concat (subvec part 0 index) (subvec part (inc index) length)))))) x acc))
-             participant
-             completion)
-     first))
-
-
