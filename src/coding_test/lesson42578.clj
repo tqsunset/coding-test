@@ -1,4 +1,5 @@
-(ns coding-test.lesson42578)
+(ns coding-test.lesson42578
+  (:require [coding-test.core :refer :all]))
 
 ;https://programmers.co.kr/learn/courses/30/lessons/42578
 ;http://2013.bapc.eu
@@ -28,8 +29,6 @@
          (apply *)                                          ; get
          dec)))
 
-(defn split [regex string]
-  (clojure.string/split string regex))
 
 (defn parse-helper [string]                                 ;"hat headgear\nsunglasses eyewear\nturban headgear"
   (->> (split #"\n" string)                                 ;("hat headgear" "sunglasses eyewear" "turban headgear")
